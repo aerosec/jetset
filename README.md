@@ -58,7 +58,7 @@ optional arguments:
   --port PORT           Port number to communicate with Qemu (over localhost)
   --soc SOCNAME         Type of soc (console | heat_press | steering_control |
                         robot | gateway | drone | reflow_oven | cnc | stm32f4
-                        | rpi | beagle | cmu900 | ics)
+                        | rpi | beagle)
   -o OUTFILE            output file
   --cmdfile CMDFILE     path to script to invoke qemu instance. If window
                         doesn't open, make sure that the qemu run script is
@@ -99,10 +99,10 @@ make run_rpi_concrete
 
   There are three other repos needed to reproduce results. They are all pulled in automatically by the makefile.  
 
-- **Symbolic Execution Engine**: Jetset's symbolic execution is [here](https://github.com/enjhnsn2/jetset_engine).
+- **Symbolic Execution Engine**: Jetset's symbolic execution is [here](https://github.com/aerosec/jetset_engine.git).
 
-- **Modified QEMU**: Jetset's modified version of qemu is [here](https://github.com/enjhnsn2/jetset_qemu).
+- **Modified QEMU**: Jetset's modified version of qemu is [here](https://github.com/aerosec/jetset_qemu.git).
 
-- **Binaries used for evaluation**: The binaries we executed as part of our evaluation are [here](https://github.com/enjhnsn2/jetset_public_data).
+- **Binaries used for evaluation**: The binaries we executed as part of our evaluation are [here](https://github.com/aerosec/jetset_public_data.git).
 
 
