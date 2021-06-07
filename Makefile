@@ -6,9 +6,9 @@ ENGINE_SCRIPT := jetset_engine/jetset_server.py
 ACTIVATE_VIRTUALENV := jetset_env/bin/activate
 
 clone:
-	git clone https://github.com/enjhnsn2/jetset_engine.git
-	git clone https://github.com/enjhnsn2/jetset_qemu.git
-	git clone https://github.com/enjhnsn2/jetset_public_data.git
+	git clone https://github.com/aerosec/jetset_engine.git
+	git clone https://github.com/aerosec/jetset_qemu.git
+	git clone https://github.com/aerosec/jetset_public_data.git
 
 pull:
 	cd jetset_engine && git pull
