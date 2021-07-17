@@ -105,4 +105,5 @@ make run_rpi_concrete
 
 - **Binaries used for evaluation**: The binaries we executed as part of our evaluation are [here](https://github.com/aerosec/jetset_public_data.git).
 
+- **Architecture Independent Fuzzer**: Jetset's fuzzer is [here](https://github.com/aerosec/jetset_fuzzer.git).
 
