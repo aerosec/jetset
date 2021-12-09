@@ -107,3 +107,6 @@ make run_rpi_concrete
 
 - **Architecture Independent Fuzzer**: Jetset's fuzzer is [here](https://github.com/aerosec/jetset_fuzzer.git).
 
+## FAQ
+
+**How do I add custom firmware and symbolic devices?**: See the README.md files [here](https://github.com/aerosec/jetset_engine.git) and [here](https://github.com/aerosec/jetset_qemu.git).
