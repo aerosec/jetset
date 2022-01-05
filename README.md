@@ -1,6 +1,6 @@
 # Jetset: Targeted Firmware Rehosting for Embedded Systems
 
-This repository contains all the code and data necessary for building Jetset and reproducing the results presented in our Usenix'21 paper [Jetset: Targeted Firmware Rehosting for Embedded Systems](https://www.usenix.org/system/files/sec21fall-johnson.pdf).  
+This repository contains all the code and data necessary for building Jetset and reproducing the results presented in our Usenix'21 paper [Jetset: Targeted Firmware Rehosting for Embedded Systems](https://www.usenix.org/system/files/sec21-johnson.pdf).  
   
 ## Abstract  
 The ability to execute code in an emulator is a fundamental part of modern vulnerability testing. 
