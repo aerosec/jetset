@@ -6,9 +6,9 @@ ENGINE_SCRIPT := jetset_engine/jetset_server.py
 ACTIVATE_VIRTUALENV := jetset_env/bin/activate
 
 clone:
-	git clone https://github.com/aerosec/jetset_engine.git
-	git clone https://github.com/aerosec/jetset_qemu.git
-	git clone https://github.com/aerosec/jetset_public_data.git
+	git clone git@github.com:aerosec/jetset_qemu.git
+	git clone git@github.com:aerosec/jetset_engine.git
+	git clone git@github.com:aerosec/jetset_public_data.git
 
 pull:
 	cd jetset_engine && git pull
@@ -18,7 +18,7 @@ pull:
 
 config_qemu:
 	if [ ! -d jetset_qemu/build ]; then \
-    	mkdir jetset_qemu/build; \
+			mkdir jetset_qemu/build; \
     fi
 	cd jetset_qemu/build && \
 	../configure --python=python3 --target-list=arm-softmmu,i386-softmmu,m68k-softmmu --disable-nettle --disable-docs --cpu=unknown --enable-tcg-interpreter --disable-werror
@@ -37,7 +37,10 @@ build_jetset_engine:
 
 build_qemu:
 	cd jetset_qemu/build && \
-	make
+	make -j`nproc`
+
+run_cmu:
+	source jetset_env/bin/activate && cd $(ENGINE_BASE) && python $(ENGINE_SCRIPT) --soc=cmu --useFinalizer --useSlicer --cmdfile ../jetset_qemu/run_cmu_qemu.sh
 
 run_rpi:
 	source jetset_env/bin/activate && cd $(ENGINE_BASE) && python $(ENGINE_SCRIPT) --soc=rpi --useFinalizer --useSlicer --cmdfile ../jetset_qemu/run_rpi_qemu.sh
@@ -71,6 +74,9 @@ run_heat_press:
 
 run_steering_control:
 	source jetset_env/bin/activate && cd $(ENGINE_BASE) && python $(ENGINE_SCRIPT) --soc=steering_control -o=steering_control_device.c --cmdfile ../jetset_qemu/run_steering_control.sh --useFunctionPrologues
+
+run_cmu_concrete:
+	bash jetset_qemu/run_cmu_qemu_concrete.sh
 
 run_rpi_concrete:
 	bash jetset_qemu/run_rpi_qemu_concrete.sh
